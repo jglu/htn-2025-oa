@@ -24,7 +24,6 @@ function App() {
                 <Route path="events" element={<Navigate to="/" replace />} />
                 <Route path="login" element={<Login />} />
                 <Route path="/404" element={<NotFound />} />
-                <Route path="*" element={<Navigate to="/404" replace />} />
               </Routes>
             </div>
           </BrowserRouter>
