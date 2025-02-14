@@ -84,6 +84,12 @@ const EventCard = ({ event_info, loggedIn, relatedEventNames }) => {
 
             <h4 className="event-type">\\ {event_type.replace("_", " ").toUpperCase()}</h4>
 
+            {speakers.length > 0 && (
+                <h4 className="event-speakers">
+                    <strong>\\ Speaker:</strong> {speakers.map((s) => s.name).join(", ")}
+                </h4>
+            )}
+
             <p className="event-time">
                 {eventTime(start_time, end_time)}
             </p>
@@ -92,13 +98,7 @@ const EventCard = ({ event_info, loggedIn, relatedEventNames }) => {
 
             <br />
             <hr />
-
             <br />
-            {speakers.length > 0 && (
-                <p className="event-speakers">
-                    <strong>Speaker:</strong> {speakers.map((s) => s.name).join(", ")}
-                </p>
-            )}
 
             {public_url && (
                 <p className="event-url">

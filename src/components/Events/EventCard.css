@@ -51,3 +51,15 @@ hr {
     border: 0px;
     width: 80%
 }
+
+.event-url, .hacker-url {
+    font-size: 16px;
+}
+
+.event-related {
+    margin-top: 0.5rem;
+}
+
+ul {
+    list-style-position: inside;
+}
