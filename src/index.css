@@ -1,13 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Honk:MORF@10&family=Josefin+Sans:wght@100..700&display=swap');
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Josefin Sans', sans-serif;
-    font-optical-sizing: auto;  /* optional if you'd like to include */
-    font-weight: 400;           /* pick a default weight here */
+    font-optical-sizing: auto;
+    font-weight: 400;
     font-style: normal;
 }
 
-h1,h2,h3,h4,h5,h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: 'Honk', sans-serif;
     font-style: normal;
+}
+
+h1 {
+    font-size: 6rem;
 }

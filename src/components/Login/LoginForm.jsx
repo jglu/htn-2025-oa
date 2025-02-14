@@ -64,6 +64,7 @@ const StyledWrapper = styled.div`
     --font-color-sub: #666;
     --bg-color: #fff;
     --main-color: #323232;
+    margin-top: 2rem;
     padding: 20px;
     background: lightgrey;
     display: flex;
