@@ -30,7 +30,7 @@ const LoginForm = () => {
       { !loggedIn
         ? <StyledWrapper>
           <form className="form" onSubmit={handleSubmit}>
-            <div className="title">Welcome,<br /><span>Log in</span></div>
+            <div className="title">Welcome, Hacker!<br /><span>Log in to access previous events.</span></div>
             <input
               type="text"
               placeholder="Username"
@@ -48,7 +48,7 @@ const LoginForm = () => {
               onChange={(e) => setPassword(e.target.value)}
             />
             {error && <p className="error" style={{ color: 'red' }}>{error}</p>}
-            <button type="submit" className="button-confirm">Let`s go →</button>
+            <button type="submit" className="button-confirm">Log in</button>
           </form>
         </StyledWrapper>
         : <p>You are logged in!</p>
@@ -117,6 +117,9 @@ const StyledWrapper = styled.div`
     display: flex;
     gap: 20px;
   }
+    .button-confirm {
+    padding: 5px 10px;
+    }
   }`;
 
 export default LoginForm;
