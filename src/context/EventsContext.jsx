@@ -13,7 +13,6 @@ export const EventsProvider = ({ children }) => {
             const res = await fetch(url);
             const data = await res.json();
             data.sort((a, b) => a.start_time - b.start_time );
-            console.log(data, "data")
             setEvents(data);
         }
         fetchEvents();
