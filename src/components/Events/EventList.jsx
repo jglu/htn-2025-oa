@@ -1,18 +1,17 @@
-import { use, useEffect } from 'react';
+import { use, useEffect, useState } from 'react';
 import { EventsContext } from '../../context/EventsContext';
 import { AuthContext } from '../../context/AuthContext'
 
 import EventCard from './EventCard';
 
 const EventList = () => {
-    const { events, eventsPublic } = use(EventsContext); // both public and private events
+    const { events, eventsPublic } = use(EventsContext);
     const { loggedIn } = use(AuthContext)
-    const filteredEvents = loggedIn ? events : eventsPublic;
+    const [filteredEvents, setFilteredEvents] = useState([]);
 
-    // testing
     useEffect(() => {
-        console.log(filteredEvents, "filteredEvents")
-    })
+        setFilteredEvents(loggedIn ? events : eventsPublic);
+    }, [events, eventsPublic])
 
     return (
         <div>

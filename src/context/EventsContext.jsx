@@ -8,11 +8,12 @@ export const EventsProvider = ({ children }) => {
     const url = 'https://api.hackthenorth.com/v3/events';
 
     useEffect(() => {
-        // https://api.hackthenorth.com/v3/events
         // TODO: trycatch error checking
         const fetchEvents = async() => {
             const res = await fetch(url);
             const data = await res.json();
+            data.sort((a, b) => a.start_time - b.start_time );
+            console.log(data, "data")
             setEvents(data);
         }
         fetchEvents();
