@@ -43,3 +43,9 @@ p {
     font-size: 18px;
     line-height: 26px;
 }
+
+.no-select {
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }

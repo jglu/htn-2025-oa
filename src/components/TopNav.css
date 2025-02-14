@@ -2,24 +2,36 @@
     background-color: #333;
     padding: 10px 20px;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-around;
+    gap: 20px;
+    padding-bottom: 1rem;
 }
 
-.nav-container {
+
+.nav-title {
+    align-self: flex-start;
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0px;
+}
+
+.nav-buttons {
     display: flex;
-    gap: 20px;
+    gap: 1rem;;
 }
 
 .nav-button {
-    color: white;
+    color: #3b5274;
     text-decoration: none;
-    font-size: 18px;
-    padding: 8px 15px;
+    font-size: 14px;
+    padding: 4px 20px;
     border-radius: 5px;
-    background-color: #555;
+    background-color: #faf6ea;
     transition: background 0.3s;
+    font-weight: bold;
+    letter-spacing: 0.5px;
 }
 
 .nav-button:hover {
-    background-color: #777;
+    background-color: #CCC4AB;
 }
