@@ -1,3 +1,7 @@
+.app {
+    background-color: #faf6ea;
+}
+
 .pages {
     display: flex;
     flex-direction: column;
