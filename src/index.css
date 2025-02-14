@@ -1,1 +1,13 @@
-/* TODO: base styling */
+@import url('https://fonts.googleapis.com/css2?family=Honk:MORF@10&family=Josefin+Sans:wght@100..700&display=swap');
+
+body {
+    font-family: 'Josefin Sans', sans-serif;
+    font-optical-sizing: auto;  /* optional if you'd like to include */
+    font-weight: 400;           /* pick a default weight here */
+    font-style: normal;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: 'Honk', sans-serif;
+    font-style: normal;
+}
