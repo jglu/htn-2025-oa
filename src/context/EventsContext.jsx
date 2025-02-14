@@ -4,10 +4,10 @@ export const EventsContext = createContext();
 
 export const EventsProvider = ({ children }) => {
     const [events, setEvents] = useState([]);
+    const [eventsPublic, setEventsPublic] = useState([]);
     const url = 'https://api.hackthenorth.com/v3/events';
 
     useEffect(() => {
-        // fetch api data from
         // https://api.hackthenorth.com/v3/events
         // TODO: trycatch error checking
         const fetchEvents = async() => {
@@ -15,12 +15,15 @@ export const EventsProvider = ({ children }) => {
             const data = await res.json();
             setEvents(data);
         }
-
         fetchEvents();
     }, []);
 
+    useEffect(() => {
+        setEventsPublic(events.filter(event => event.permission === "public"));
+    }, [events]);
+
     return (
-        <EventsContext value={{ events }}>
+        <EventsContext value={{ events, eventsPublic }}>
             {children}
         </EventsContext>
     )
