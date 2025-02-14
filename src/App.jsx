@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { HashRouter, Routes, Route, Navigate } from "react-router-dom";
 import { EventsProvider } from "./context/EventsContext"
 import { AuthProvider } from "./context/AuthContext"
 
@@ -16,7 +16,7 @@ function App() {
     <div className="app">
       <AuthProvider>
         <EventsProvider>
-          <BrowserRouter>
+          <HashRouter>
             <TopNav />
             <div className="pages">
               <Routes>
@@ -26,7 +26,7 @@ function App() {
                 <Route path="/404" element={<NotFound />} />
               </Routes>
             </div>
-          </BrowserRouter>
+          </HashRouter>
         </EventsProvider>
       </AuthProvider>
     </div>
