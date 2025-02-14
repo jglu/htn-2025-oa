@@ -1,16 +1,14 @@
-import { use } from 'react';
-import { AuthContext } from '../context/AuthContext';
-
 import LoginForm from '../components/Login/LoginForm';
 
+import './page.css'
+
 const Login = () => {
-    const { loggedIn, setLoggedIn } = use(AuthContext)
-    
     return (
-        <>
-            <h1>Log In</h1>
+        <div className="page">
+            <h1>log in</h1>
+            <p>You must log in to access events from hackathons the you've attended.</p>
             <LoginForm/>
-        </>
+        </div>
     )
 }
 
