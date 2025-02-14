@@ -1,4 +1,6 @@
 .event-card {
+    display: flex;
+    flex-direction: column;
     padding: 2.5rem;
     margin-top: 3rem;
     border-radius: 12px;
@@ -9,6 +11,7 @@
 .event-header {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 8px;
     margin-bottom: 10px;
 }
@@ -16,6 +19,8 @@
 .event-title {
     font-size: 1.6rem;
     font-weight: bold;
+    width: 75%;
+    line-height: 2rem
 }
 
 .event-title a {
@@ -23,8 +28,9 @@
     color: inherit;
 }
 
-.event-time, .event-url {
+.event-time {
     font-weight: bold;
+    margin: 0.7rem 0;
 }
 
 .copy-link-button {
@@ -36,4 +42,12 @@
 
 .copy-link-icon {
     padding-right: 0.5em;
+}
+
+hr {
+    align-self: center;
+    background-color: rgb(87, 93, 116);
+    height: 1px;
+    border: 0px;
+    width: 80%
 }

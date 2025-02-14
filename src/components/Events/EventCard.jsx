@@ -74,12 +74,12 @@ const EventCard = ({ event_info, loggedIn, relatedEventNames }) => {
     return (
         <div className="event-card" id={`event-${id}`} style={{ background: randomGradient() }}>
             <div className="event-header">
-                <button onClick={copyAnchorLink} className="copy-link-button" title="Copy event link">
-                    <img src={linkIcon} className="copy-link-icon" />
-                </button>
                 <h2 className="event-title">
                     <a href={`#event-${id}`} className="anchor-link">{name}</a>
                 </h2>
+                <button onClick={copyAnchorLink} className="copy-link-button" title="Copy event link">
+                    <img src={linkIcon} className="copy-link-icon" />
+                </button>
             </div>
 
             <h4 className="event-type">\\ {event_type.replace("_", " ").toUpperCase()}</h4>
@@ -89,16 +89,20 @@ const EventCard = ({ event_info, loggedIn, relatedEventNames }) => {
             </p>
 
             {description && <p className="event-description">{description}</p>}
+
+            <br />
+            <hr />
+
             <br />
             {speakers.length > 0 && (
                 <p className="event-speakers">
-                    Speaker: {speakers.map((s) => s.name).join(", ")}
+                    <strong>Speaker:</strong> {speakers.map((s) => s.name).join(", ")}
                 </p>
             )}
 
             {public_url && (
                 <p className="event-url">
-                    Event URL:{" "}
+                    <strong>Event URL:</strong>{" "}
                     <a href={public_url} target="_blank" rel="noopener noreferrer">
                         {public_url}
                     </a>
@@ -107,7 +111,7 @@ const EventCard = ({ event_info, loggedIn, relatedEventNames }) => {
 
             {loggedIn && private_url && (
                 <p className="hacker-url">
-                    Hacker URL:{" "}
+                    <strong>Hacker URL:</strong>{" "}
                     <a href={private_url} target="_blank" rel="noopener noreferrer">
                         {private_url}
                     </a>
