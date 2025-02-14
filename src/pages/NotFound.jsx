@@ -7,7 +7,8 @@
 const NotFound = () => {
     return (
         <>
-            <p>not found page</p>
+            <h1>404</h1>
+            <p>Page not found!</p>
         </>
     )
 }

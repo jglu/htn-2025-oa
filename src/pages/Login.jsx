@@ -8,7 +8,7 @@ const Login = () => {
     
     return (
         <>
-            <h1>login page</h1>
+            <h1>Log In</h1>
             <LoginForm/>
         </>
     )

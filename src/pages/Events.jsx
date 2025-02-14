@@ -13,7 +13,7 @@ const Events = () => {
 
     return (
         <>
-            <h1>events page</h1>
+            <h1>Previous Events</h1>
         </>
     )
 }
