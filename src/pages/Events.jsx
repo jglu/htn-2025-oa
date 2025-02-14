@@ -1,12 +1,11 @@
-// TODO: home page, placeholder
-// here will display events
+// TODO: add an AuthContext to check if user is logged in
 
-/*
-- only shows public on landing
-- after logging in, shows all public+private
-*/
+import { use } from 'react';
+import { EventsContext } from '../context/EventsContext';
 
 const Events = () => {
+    const { events } = use(EventsContext);
+
     return (
         <>
             <p>events page</p>
