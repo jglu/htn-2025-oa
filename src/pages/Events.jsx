@@ -1,10 +1,15 @@
-// TODO: add an AuthContext to check if user is logged in
-
-import { use } from 'react';
+import { use, useState, useEffect } from 'react';
 import { EventsContext } from '../context/EventsContext';
+import { AuthContext } from '../context/AuthContext'
 
 const Events = () => {
-    const { events } = use(EventsContext);
+    const { events } = use(EventsContext); // both public and private events
+    const { loggedIn } = use(AuthContext)
+    const [publicEvents, setPublicEvents] = useState([]); // public-only events
+
+    useEffect(() => {
+        setPublicEvents(events.filter(event => event.permission === "public"));
+    }, [events])
 
     return (
         <>
