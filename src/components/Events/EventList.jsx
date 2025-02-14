@@ -11,12 +11,31 @@ const EventList = () => {
 
     useEffect(() => {
         setFilteredEvents(loggedIn ? events : eventsPublic);
-    }, [events, eventsPublic])
+    }, [loggedIn, events, eventsPublic])
 
+    // for 1 event's related events, output its name
+    const getEventNames = (event) => {
+        if (!event) return;
+        if (events.length == 0) return;
+
+        const relatedEventIds = event.related_events
+
+        return relatedEventIds
+            .map(id => {
+                const event = events.find(event => event.id === id);
+                return event ? { id: event.id, name: event.name } : null;
+            })
+    };
+    
     return (
         <div>
             {filteredEvents.map(event => (
-                <EventCard key={event.id} event_info={event} />
+                <EventCard
+                    key={event.id}
+                    event_info={event}
+                    loggedIn={loggedIn}
+                    relatedEventNames={getEventNames(event)}
+                />
             ))}
         </div>
     );

@@ -1,19 +1,17 @@
 import './EventCard.css'
 import linkIcon from "../../assets/link-24x24.png";
 
-const EventCard = ({ event_info, loggedIn }) => {
+const EventCard = ({ event_info, loggedIn, relatedEventNames }) => {
     const {
         id,
         name,
         event_type,
-        permission,
         start_time,
         end_time,
         description,
         speakers,
         public_url,
         private_url,
-        related_events,
     } = event_info;
 
     // displays in 1 day or 2 days depending on if it spans
@@ -74,7 +72,7 @@ const EventCard = ({ event_info, loggedIn }) => {
     };
 
     return (
-        <div className="event-card" style={{ background: randomGradient() }}>
+        <div className="event-card" id={`event-${id}`} style={{ background: randomGradient() }}>
             <div className="event-header">
                 <button onClick={copyAnchorLink} className="copy-link-button" title="Copy event link">
                     <img src={linkIcon} className="copy-link-icon" />
@@ -116,10 +114,15 @@ const EventCard = ({ event_info, loggedIn }) => {
                 </p>
             )}
 
-            {related_events.length > 0 && (
-                <p className="event-related">
-                    Related Events: {related_events.join(", ")}
-                </p>
+            {relatedEventNames.length > 0 && (
+                <div className="event-related">
+                    <strong>Related Events:</strong>
+                    <ul>
+                        {relatedEventNames.map((event) => (
+                            <li key={event.id}><a href={`#event-${event.id}`}>{event.name}</a></li>
+                        ))}
+                    </ul>
+                </div>
             )}
         </div>
     );
