@@ -16,17 +16,19 @@ const EventList = () => {
     // for 1 event's related events, output its name
     const getEventNames = (event) => {
         if (!event) return;
-        if (events.length == 0) return;
+        if (filteredEvents.length == 0) return;
 
-        const relatedEventIds = event.related_events
+        let relatedEventIds = event.related_events.filter(id =>
+            filteredEvents.some(event => event.id == id)
+        )
 
         return relatedEventIds
             .map(id => {
-                const event = events.find(event => event.id === id);
+                const event = filteredEvents.find(event => event.id === id);
                 return event ? { id: event.id, name: event.name } : null;
             })
     };
-    
+
     return (
         <div>
             {filteredEvents.map(event => (
